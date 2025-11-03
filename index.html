@@ -1,0 +1,277 @@
+
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Sanaré & Nomad — Interactivo</title>
+<link rel="preconnect" href="https://cdn.plot.ly">
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script>window.__figSpecs = {}; window.__rendered = {};</script>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0f172a;color:#e5e7eb}
+.header{background:linear-gradient(90deg,#f7a28b,#fbb1a8);color:#0f172a;padding:18px 24px;position:sticky;top:0;z-index:10}
+.header h1{margin:0;font-size:20px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.nav button{background:#111827;color:#e5e7eb;border:1px solid #374151;padding:8px 12px;border-radius:999px;cursor:pointer}
+.nav button.active{background:#f7a28b;color:#111827;border-color:#f7a28b}
+.container{padding:16px 24px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 10px 20px rgba(0,0,0,.2)}
+.card h3{margin-top:0;color:#fbb1a8}
+.small{font-size:12px;color:#9ca3af}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.hidden{display:none}
+.badge{display:inline-block;background:#1f2937;border:1px solid #374151;border-radius:10px;padding:2px 8px;font-size:12px;color:#e5e7eb;margin-right:6px}
+.footer{text-align:center;padding:20px;color:#9ca3af}
+ul{margin:0 0 0 18px}
+.chart{min-height:360px}
+.table{width:100%;border-collapse:collapse;margin-top:8px}
+.table th,.table td{border-bottom:1px solid #1f2937;padding:6px 4px;text-align:left}
+</style>
+</head><body>
+<div class="header">
+  <h1>Dashboard Sanaré & Nomad — Interactivo</h1>
+  <div class="nav" id="navTabs"><button data-target="Sanare_Nuevos_seguidores" onclick="showTab('Sanare_Nuevos_seguidores')">Sanare.xlsx — Nuevos seguidores</button><button data-target="Sanare_Datos_de_visitantes" onclick="showTab('Sanare_Datos_de_visitantes')">Sanare.xlsx — Datos de visitantes</button><button data-target="Sanare_Indicadores" onclick="showTab('Sanare_Indicadores')">Sanare.xlsx — Indicadores</button><button data-target="nomad_Indicadores" onclick="showTab('nomad_Indicadores')">nomad.xlsx — Indicadores</button><button data-target="nomad_Datos_de_visitantes" onclick="showTab('nomad_Datos_de_visitantes')">nomad.xlsx — Datos de visitantes</button><button data-target="nomad_Nuevos_seguidores" onclick="showTab('nomad_Nuevos_seguidores')">nomad.xlsx — Nuevos seguidores</button></div>
+  <div class="small">KPIs, porcentajes, proyección y sugerencias accionables por hoja.</div>
+</div>
+<div class="container">
+
+<section class="tabsection hidden" id="Sanare_Nuevos_seguidores">
+  <div class="card"><h3>Sanare.xlsx — Nuevos seguidores</h3><p class="small">KPIs, porcentajes, proyección y sugerencias.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>KPIs rápidos</h3>
+      <div class="badge">Filas: 90</div>
+      <div class="badge">Columnas: 5</div>
+      <div class="badge">% Nulos: 0.0%</div>
+      <div class="badge">Fecha: Fecha</div>
+      <div class="badge">Métrica: Seguidores patrocinados</div>
+      <div class="badge">Categoría: —</div>
+    </div>
+    <div class="card">
+      <h3>Vista previa (primeras columnas)</h3>
+      <div class="small">Fecha, Seguidores patrocinados, Seguidores generales, Seguidores invitados automáticamente, Total de seguidores</div>
+    </div>
+  </div>
+  
+                    <div class="card">
+                      <h3>Resumen temporal</h3>
+                      <div class="badge">Último mes: 0.0</div>
+                      <div class="badge">MoM: —%</div>
+                      <div class="badge">Promedio mensual: 0.0</div>
+                    </div>
+  <div class="card"><h3>Gráficos</h3><div class="chart" id="Sanare_Nuevos_seguidores_ts" data-fig="1"></div><div class="chart" id="Sanare_Nuevos_seguidores_proj" data-fig="1"></div></div>
+  
+  
+            <div class="card">
+              <h3>Sugerencias accionables</h3>
+              <ul><li>Proyección: al mes +3 podrías tener ~0.0 seguidores patrocinados (lineal simple).</li><li>Seguidores: impulsa contenido recurrente (educación onco), UGC y colaboraciones con médicos clave.</li></ul>
+            </div>
+</section>
+
+
+<section class="tabsection hidden" id="Sanare_Datos_de_visitantes">
+  <div class="card"><h3>Sanare.xlsx — Datos de visitantes</h3><p class="small">KPIs, porcentajes, proyección y sugerencias.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>KPIs rápidos</h3>
+      <div class="badge">Filas: 90</div>
+      <div class="badge">Columnas: 25</div>
+      <div class="badge">% Nulos: 0.0%</div>
+      <div class="badge">Fecha: Fecha</div>
+      <div class="badge">Métrica: Visualizaciones de la página general (ordenador)</div>
+      <div class="badge">Categoría: —</div>
+    </div>
+    <div class="card">
+      <h3>Vista previa (primeras columnas)</h3>
+      <div class="small">Fecha, Visualizaciones de la página general (ordenador), Visualizaciones de la página general (móvil), Visualizaciones de la página general (total), Visitantes únicos de la página general (ordenador)</div>
+    </div>
+  </div>
+  
+                    <div class="card">
+                      <h3>Resumen temporal</h3>
+                      <div class="badge">Último mes: 3.0</div>
+                      <div class="badge">MoM: 200.0%</div>
+                      <div class="badge">Promedio mensual: 11.5</div>
+                    </div>
+  <div class="card"><h3>Gráficos</h3><div class="chart" id="Sanare_Datos_de_visitantes_ts" data-fig="1"></div><div class="chart" id="Sanare_Datos_de_visitantes_proj" data-fig="1"></div></div>
+  
+  
+            <div class="card">
+              <h3>Sugerencias accionables</h3>
+              <ul><li>Crecimiento MoM positivo: replica acciones del mes (canales/horarios) y prueba A/B para escalar.</li><li>Proyección: al mes +3 podrías tener ~25.0 visualizaciones de la página general (ordenador) (lineal simple).</li><li>Visitantes: optimiza SEO local (sede + tratamiento), prueba campañas Performance Max y landing con CTA claro.</li></ul>
+            </div>
+</section>
+
+
+<section class="tabsection hidden" id="Sanare_Indicadores">
+  <div class="card"><h3>Sanare.xlsx — Indicadores</h3><p class="small">KPIs, porcentajes, proyección y sugerencias.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>KPIs rápidos</h3>
+      <div class="badge">Filas: 90</div>
+      <div class="badge">Columnas: 20</div>
+      <div class="badge">% Nulos: 0.0%</div>
+      <div class="badge">Fecha: Fecha</div>
+      <div class="badge">Métrica: Impresiones (orgánicas)</div>
+      <div class="badge">Categoría: —</div>
+    </div>
+    <div class="card">
+      <h3>Vista previa (primeras columnas)</h3>
+      <div class="small">Fecha, Impresiones (orgánicas), Impresiones (patrocinadas), Impresiones (totales), Impresiones únicas (orgánicas)</div>
+    </div>
+  </div>
+  
+                    <div class="card">
+                      <h3>Resumen temporal</h3>
+                      <div class="badge">Último mes: 55.0</div>
+                      <div class="badge">MoM: 189.47%</div>
+                      <div class="badge">Promedio mensual: 254.42</div>
+                    </div>
+  <div class="card"><h3>Gráficos</h3><div class="chart" id="Sanare_Indicadores_ts" data-fig="1"></div><div class="chart" id="Sanare_Indicadores_proj" data-fig="1"></div></div>
+  
+  
+            <div class="card">
+              <h3>Sugerencias accionables</h3>
+              <ul><li>Crecimiento MoM positivo: replica acciones del mes (canales/horarios) y prueba A/B para escalar.</li><li>Proyección: al mes +3 podrías tener ~386.0 impresiones (orgánicas) (lineal simple).</li></ul>
+            </div>
+</section>
+
+
+<section class="tabsection hidden" id="nomad_Indicadores">
+  <div class="card"><h3>nomad.xlsx — Indicadores</h3><p class="small">KPIs, porcentajes, proyección y sugerencias.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>KPIs rápidos</h3>
+      <div class="badge">Filas: 90</div>
+      <div class="badge">Columnas: 20</div>
+      <div class="badge">% Nulos: 0.0%</div>
+      <div class="badge">Fecha: Fecha</div>
+      <div class="badge">Métrica: Impresiones (orgánicas)</div>
+      <div class="badge">Categoría: —</div>
+    </div>
+    <div class="card">
+      <h3>Vista previa (primeras columnas)</h3>
+      <div class="small">Fecha, Impresiones (orgánicas), Impresiones (patrocinadas), Impresiones (totales), Impresiones únicas (orgánicas)</div>
+    </div>
+  </div>
+  
+                    <div class="card">
+                      <h3>Resumen temporal</h3>
+                      <div class="badge">Último mes: 41.0</div>
+                      <div class="badge">MoM: 36.67%</div>
+                      <div class="badge">Promedio mensual: 323.33</div>
+                    </div>
+  <div class="card"><h3>Gráficos</h3><div class="chart" id="nomad_Indicadores_ts" data-fig="1"></div><div class="chart" id="nomad_Indicadores_proj" data-fig="1"></div></div>
+  
+  
+            <div class="card">
+              <h3>Sugerencias accionables</h3>
+              <ul><li>Crecimiento MoM positivo: replica acciones del mes (canales/horarios) y prueba A/B para escalar.</li><li>Proyección: al mes +3 podrías tener ~593.0 impresiones (orgánicas) (lineal simple).</li></ul>
+            </div>
+</section>
+
+
+<section class="tabsection hidden" id="nomad_Datos_de_visitantes">
+  <div class="card"><h3>nomad.xlsx — Datos de visitantes</h3><p class="small">KPIs, porcentajes, proyección y sugerencias.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>KPIs rápidos</h3>
+      <div class="badge">Filas: 90</div>
+      <div class="badge">Columnas: 25</div>
+      <div class="badge">% Nulos: 0.0%</div>
+      <div class="badge">Fecha: Fecha</div>
+      <div class="badge">Métrica: Visualizaciones de la página general (ordenador)</div>
+      <div class="badge">Categoría: —</div>
+    </div>
+    <div class="card">
+      <h3>Vista previa (primeras columnas)</h3>
+      <div class="small">Fecha, Visualizaciones de la página general (ordenador), Visualizaciones de la página general (móvil), Visualizaciones de la página general (total), Visitantes únicos de la página general (ordenador)</div>
+    </div>
+  </div>
+  
+                    <div class="card">
+                      <h3>Resumen temporal</h3>
+                      <div class="badge">Último mes: 2.0</div>
+                      <div class="badge">MoM: —%</div>
+                      <div class="badge">Promedio mensual: 7.58</div>
+                    </div>
+  <div class="card"><h3>Gráficos</h3><div class="chart" id="nomad_Datos_de_visitantes_ts" data-fig="1"></div><div class="chart" id="nomad_Datos_de_visitantes_proj" data-fig="1"></div></div>
+  
+  
+            <div class="card">
+              <h3>Sugerencias accionables</h3>
+              <ul><li>Proyección: al mes +3 podrías tener ~11.0 visualizaciones de la página general (ordenador) (lineal simple).</li><li>Visitantes: optimiza SEO local (sede + tratamiento), prueba campañas Performance Max y landing con CTA claro.</li></ul>
+            </div>
+</section>
+
+
+<section class="tabsection hidden" id="nomad_Nuevos_seguidores">
+  <div class="card"><h3>nomad.xlsx — Nuevos seguidores</h3><p class="small">KPIs, porcentajes, proyección y sugerencias.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>KPIs rápidos</h3>
+      <div class="badge">Filas: 90</div>
+      <div class="badge">Columnas: 5</div>
+      <div class="badge">% Nulos: 0.0%</div>
+      <div class="badge">Fecha: Fecha</div>
+      <div class="badge">Métrica: Seguidores patrocinados</div>
+      <div class="badge">Categoría: —</div>
+    </div>
+    <div class="card">
+      <h3>Vista previa (primeras columnas)</h3>
+      <div class="small">Fecha, Seguidores patrocinados, Seguidores generales, Seguidores invitados automáticamente, Total de seguidores</div>
+    </div>
+  </div>
+  
+                    <div class="card">
+                      <h3>Resumen temporal</h3>
+                      <div class="badge">Último mes: 0.0</div>
+                      <div class="badge">MoM: —%</div>
+                      <div class="badge">Promedio mensual: 0.0</div>
+                    </div>
+  <div class="card"><h3>Gráficos</h3><div class="chart" id="nomad_Nuevos_seguidores_ts" data-fig="1"></div><div class="chart" id="nomad_Nuevos_seguidores_proj" data-fig="1"></div></div>
+  
+  
+            <div class="card">
+              <h3>Sugerencias accionables</h3>
+              <ul><li>Proyección: al mes +3 podrías tener ~0.0 seguidores patrocinados (lineal simple).</li><li>Seguidores: impulsa contenido recurrente (educación onco), UGC y colaboraciones con médicos clave.</li></ul>
+            </div>
+</section>
+<script>window.__figSpecs["Sanare_Nuevos_seguidores_ts"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'name': 'Total'}], 'layout': {'title': 'Tendencia mensual — Nuevos seguidores (Seguidores patrocinados)', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Seguidores patrocinados'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["Sanare_Nuevos_seguidores_proj"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'name': 'Histórico'}, {'type': 'scatter', 'mode': 'lines', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'name': 'Proyección (3m)', 'line': {'dash': 'dash'}}], 'layout': {'title': 'Proyección 3 meses — Nuevos seguidores (Seguidores patrocinados)', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Seguidores patrocinados'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["Sanare_Datos_de_visitantes_ts"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [0.0, 7.0, 2.0, 4.0, 7.0, 11.0, 1.0, 23.0, 40.0, 39.0, 1.0, 3.0], 'name': 'Total'}], 'layout': {'title': 'Tendencia mensual — Datos de visitantes (Visualizaciones de la página general (ordenador))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Visualizaciones de la página general (ordenador)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["Sanare_Datos_de_visitantes_proj"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [0.0, 7.0, 2.0, 4.0, 7.0, 11.0, 1.0, 23.0, 40.0, 39.0, 1.0, 3.0], 'name': 'Histórico'}, {'type': 'scatter', 'mode': 'lines', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01'], 'y': [2.730769230769231, 4.325174825174825, 5.91958041958042, 7.513986013986014, 9.10839160839161, 10.702797202797203, 12.297202797202797, 13.891608391608393, 15.486013986013987, 17.080419580419584, 18.674825174825177, 20.26923076923077, 21.863636363636363, 23.45804195804196, 25.052447552447553], 'name': 'Proyección (3m)', 'line': {'dash': 'dash'}}], 'layout': {'title': 'Proyección 3 meses — Datos de visitantes (Visualizaciones de la página general (ordenador))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Visualizaciones de la página general (ordenador)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["Sanare_Indicadores_ts"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [158.0, 172.0, 208.0, 116.0, 204.0, 160.0, 98.0, 381.0, 942.0, 540.0, 19.0, 55.0], 'name': 'Total'}], 'layout': {'title': 'Tendencia mensual — Indicadores (Impresiones (orgánicas))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Impresiones (orgánicas)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["Sanare_Indicadores_proj"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [158.0, 172.0, 208.0, 116.0, 204.0, 160.0, 98.0, 381.0, 942.0, 540.0, 19.0, 55.0], 'name': 'Histórico'}, {'type': 'scatter', 'mode': 'lines', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01'], 'y': [169.551282051282, 184.9813519813519, 200.41142191142185, 215.84149184149177, 231.27156177156172, 246.70163170163164, 262.13170163170156, 277.5617715617715, 292.99184149184146, 308.4219114219114, 323.8519813519813, 339.28205128205127, 354.71212121212113, 370.1421911421911, 385.572261072261], 'name': 'Proyección (3m)', 'line': {'dash': 'dash'}}], 'layout': {'title': 'Proyección 3 meses — Indicadores (Impresiones (orgánicas))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Impresiones (orgánicas)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["nomad_Indicadores_ts"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [73.0, 59.0, 261.0, 179.0, 268.0, 173.0, 121.0, 628.0, 1469.0, 578.0, 30.0, 41.0], 'name': 'Total'}], 'layout': {'title': 'Tendencia mensual — Indicadores (Impresiones (orgánicas))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Impresiones (orgánicas)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["nomad_Indicadores_proj"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [73.0, 59.0, 261.0, 179.0, 268.0, 173.0, 121.0, 628.0, 1469.0, 578.0, 30.0, 41.0], 'name': 'Histórico'}, {'type': 'scatter', 'mode': 'lines', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01'], 'y': [148.6410256410257, 180.40326340326345, 212.1655011655012, 243.92773892773894, 275.6899766899767, 307.45221445221443, 339.2144522144522, 370.97668997668995, 402.7389277389277, 434.5011655011655, 466.26340326340323, 498.025641025641, 529.7878787878788, 561.5501165501164, 593.3123543123543], 'name': 'Proyección (3m)', 'line': {'dash': 'dash'}}], 'layout': {'title': 'Proyección 3 meses — Indicadores (Impresiones (orgánicas))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Impresiones (orgánicas)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["nomad_Datos_de_visitantes_ts"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [1.0, 1.0, 12.0, 9.0, 4.0, 4.0, 5.0, 22.0, 12.0, 19.0, 0.0, 2.0], 'name': 'Total'}], 'layout': {'title': 'Tendencia mensual — Datos de visitantes (Visualizaciones de la página general (ordenador))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Visualizaciones de la página general (ordenador)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["nomad_Datos_de_visitantes_proj"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [1.0, 1.0, 12.0, 9.0, 4.0, 4.0, 5.0, 22.0, 12.0, 19.0, 0.0, 2.0], 'name': 'Histórico'}, {'type': 'scatter', 'mode': 'lines', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01'], 'y': [5.2564102564102555, 5.679487179487179, 6.102564102564101, 6.525641025641025, 6.948717948717947, 7.3717948717948705, 7.794871794871794, 8.217948717948717, 8.641025641025639, 9.064102564102562, 9.487179487179485, 9.910256410256409, 10.333333333333332, 10.756410256410255, 11.179487179487179], 'name': 'Proyección (3m)', 'line': {'dash': 'dash'}}], 'layout': {'title': 'Proyección 3 meses — Datos de visitantes (Visualizaciones de la página general (ordenador))', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Visualizaciones de la página general (ordenador)'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["nomad_Nuevos_seguidores_ts"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'name': 'Total'}], 'layout': {'title': 'Tendencia mensual — Nuevos seguidores (Seguidores patrocinados)', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Seguidores patrocinados'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+<script>window.__figSpecs["nomad_Nuevos_seguidores_proj"]={'data': [{'type': 'scatter', 'mode': 'lines+markers', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'name': 'Histórico'}, {'type': 'scatter', 'mode': 'lines', 'x': ['2025-01-01', '2025-02-01', '2025-03-01', '2025-04-01', '2025-05-01', '2025-06-01', '2025-07-01', '2025-08-01', '2025-09-01', '2025-10-01', '2025-11-01', '2025-12-01', '2026-01-01', '2026-02-01', '2026-03-01'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'name': 'Proyección (3m)', 'line': {'dash': 'dash'}}], 'layout': {'title': 'Proyección 3 meses — Nuevos seguidores (Seguidores patrocinados)', 'xaxis': {'title': 'Mes'}, 'yaxis': {'title': 'Seguidores patrocinados'}, 'height': 360, 'template': 'plotly_dark'}};</script>
+</div>
+<div class="footer">Generado automáticamente</div>
+<script>
+function renderSectionCharts(tabId){
+  var sec = document.getElementById(tabId);
+  if(!sec) return;
+  var nodes = sec.querySelectorAll('[data-fig]');
+  nodes.forEach(function(n){
+    var id = n.getAttribute('id');
+    if(window.__rendered[id]) return;
+    var spec = window.__figSpecs[id];
+    if(!spec || !window.Plotly) return;
+    try{ Plotly.newPlot(id, spec.data, spec.layout, {responsive:true, displaylogo:false}); window.__rendered[id]=true; }catch(e){ console.warn(e); }
+  });
+  try{ Plotly.Plots.resize(sec); }catch(e){}
+}
+function showTab(id){
+  document.querySelectorAll('.tabsection').forEach(function(el){ el.classList.add('hidden'); });
+  var el = document.getElementById(id); if(el) el.classList.remove('hidden');
+  document.querySelectorAll('.nav button').forEach(function(b){ b.classList.remove('active'); });
+  var btn = document.querySelector('[data-target="'+id+'"]'); if(btn) btn.classList.add('active');
+  renderSectionCharts(id);
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var first = document.querySelector('.tabsection'); if(first) showTab(first.id);
+});
+</script>
+</body></html>
